@@ -27,3 +27,100 @@ npm run typegen
 ```
 
 [typegen]: https://github.com/patmood/pocketbase-typegen#quickstart
+
+### Importation manuelle des données
+
+#### La variable :
+
+Lancer manuellement (F5) le `backend.mjs` qui devrait afficher dans la console la liste des `maisons`.
+
+Dans le `<script setup>` de [`/src/App.vue`](/src/App.vue), ajoutez :
+
+```ts
+const maisonsListe = /* coller ici le tableau d'objet */
+```
+
+#### Le type :
+
+Toujours dans `App.vue` :
+
+- Ajouter l'import du type `MaisonsResponse` depuis `@/pocketbase-types` (idem CM/TD).
+- Spécifier le type `maisonsListe` :
+  ```ts
+  const maisonsListe:MaisonsResponse[] = /* ... */
+  ```
+- Vérifiez que l'éditeur ne signale pas d'erreurs.
+
+## Le composant `MaisonCard.vue`
+
+### Code du composant
+
+Faire le fichier [`/src/components/MaisonCard.vue`](/src/components/MaisonCard.vue)\
+Prendre modèle sur le CM/TD [`PersonneCard.vue`](https://github.com/ppierre/vue-base-tailwind/tree/vue3.3-test-personne#composant-avec-param%C3%A9tre)
+
+Pour le code du template, vous pouvez utiliser un des plugins Figma suivants :
+
+- [Inspect - Export to HTML, React, Tailwin](https://www.figma.com/community/plugin/1049994768493726219) : donne un code HTML/Tailwind à coller dans `<template>`. Juste remplacer les textes par les interpolations (eg. `{{ maProp }}`)
+- [AutoHTML](https://www.figma.com/community/plugin/1077172952654000760) : Fais un composant (choisir Vue et Taillwind en option). Mais pas en TypeScript, ni avec les types de PocketBase.
+
+Pour les `props` du composant `MaisonCard`, bien utiliser le type générer automatiquement de PocketBase : `MaisonRecord` à importer de `/src/pocketbase-types.ts`.
+
+### Tester le composant
+
+Dans le `<template>` de `App.vue`, ajouter :
+
+```html
+<MaisonCard v-bind="maisonsListe[0]" />
+```
+
+(Vérifiez que l'import du composant a été automatiquement ajouté.)
+
+## Afficher les données
+
+Afficher toutes les maisons avec un `v-for`comme [vu en CM/TD][CM-boucle-objet]
+
+[CM-boucle-objet]: https://github.com/ppierre/vue-base-tailwind/tree/vue3.3-test-personne#usage-dans-une-boucle
+
+## Afficher les images
+
+Vous pouvez adapter le code suivant ([PocketBase file url][pb-file-url]) :
+
+```js
+import { pb } from '@/backend'
+/*...*/
+const urlImg = props.img
+  ? pb.getFileUrl(props, props.img, { thumb: '100x250' })
+  : '/image-not-found.png'
+```
+
+Il faut que :
+
+- le client PocketBase soit installé (`npm i pocketbase`)
+- le backend PocketBase soit lancé.
+- le ficher `/src/backend.*` exporte `pb`
+
+Attention si vous avez plusieurs images, utiliser `props.img[0]` , `props.img[1]` ...
+
+## Si vous avez fini :
+
+Afficher plusieurs fois la liste de `Maison` avec différent traitement :
+
+- [`sort`][sort] : trier
+- [`slice`][slice] : partie
+- [`filter`][filter]: filtrer
+- [`map`][map] : transformer
+- ...
+
+Exemple :
+
+```js
+const maisonsDePlusde100M2 = maisonsListe.filter(
+  maison => /* teste si la superficie de `maison` est > 100 */
+)
+```
+
+[sort]: https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Global_Objects/Array/sort
+[slice]: https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Global_Objects/Array/slice
+[filter]: https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Global_Objects/Array/filter
+[map]: https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Global_Objects/Array/map
+[pb-file-url]: https://pocketbase.io/docs/files-handling/#file-url
