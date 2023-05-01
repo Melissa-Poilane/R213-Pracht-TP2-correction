@@ -44,10 +44,10 @@ const maisonsListe = /* coller ici le tableau d'objet */
 
 Toujours dans `App.vue` :
 
-- Ajouter l'import du type `MaisonsResponse` depuis `@/pocketbase-types` (idem CM/TD).
+- Ajouter l'import du type `MaisonResponse` depuis `@/pocketbase-types` (idem CM/TD).
 - Spécifier le type `maisonsListe` :
   ```ts
-  const maisonsListe:MaisonsResponse[] = /* ... */
+  const maisonsListe:MaisonResponse[] = /* ... */
   ```
 - Vérifiez que l'éditeur ne signale pas d'erreurs.
 
