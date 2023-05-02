@@ -10,7 +10,7 @@ const maisonsListe: MaisonResponse[] = [
     created: '2023-05-01 14:00:54.598Z',
     favori: true,
     id: '64l3n8nar836i5j',
-    images: [],
+    images: ['pexels_binyamin_mellish_106399_bnHdy6H03e.jpg'],
     nbChambres: 3,
     nbSdb: 2,
     nomMaison: 'alpha',
