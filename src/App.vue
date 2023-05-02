@@ -58,6 +58,6 @@ console.log(maisonsListe)
   </header>
 
   <main>
-    <MaisonCard v-bind="maisonsListe[0]" />
+    <MaisonCard v-for="uneMaison of maisonsListe" :v-key="uneMaison.id" v-bind="uneMaison" />
   </main>
 </template>
