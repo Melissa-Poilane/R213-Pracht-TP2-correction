@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import MaisonCard from './components/MaisonCard.vue'
 import { type MaisonResponse, Collections } from './pocketbase-types'
 
 const maisonsListe: MaisonResponse[] = [
@@ -57,10 +58,6 @@ console.log(maisonsListe)
   </header>
 
   <main>
-    <p>
-      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempora recusandae et dolorem odit
-      beatae illo labore, praesentium quidem nulla eveniet, at voluptatem incidunt. Eaque explicabo,
-      vitae quibusdam vero quod atque.
-    </p>
+    <MaisonCard v-bind="maisonsListe[0]" />
   </main>
 </template>
