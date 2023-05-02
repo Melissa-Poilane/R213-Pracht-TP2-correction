@@ -1,7 +1,13 @@
 <script setup lang="ts">
-import type { MaisonRecord } from '@/pocketbase-types'
+import { pb } from '@/backend'
+import type { MaisonRecord, MaisonResponse, BaseSystemFields } from '@/pocketbase-types'
 
-defineProps<MaisonRecord>()
+// bug MaisonResponse
+const props = defineProps<MaisonRecord & BaseSystemFields<null>>()
+
+const img0 = props.images?.[0]
+const urlImg0 = img0 ? pb.getFileUrl(props, img0, { thumb: '100x250' }) : '/image-not-found.png'
+console.log(urlImg0)
 </script>
 
 <template>
@@ -15,7 +21,7 @@ defineProps<MaisonRecord>()
 
       <img
         class="absolute left-[calc(50%_-_193.5px)] top-[-24px] h-[235px] w-[387px]"
-        src="pexels-binyamin-mellish-106399-1.png"
+        :src="urlImg0"
       />
     </div>
 
