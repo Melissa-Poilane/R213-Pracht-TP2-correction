@@ -50,6 +50,9 @@ Toujours dans `App.vue` :
   const maisonsListe:MaisonResponse[] = /* ... */
   ```
 - Vérifiez que l'éditeur ne signale pas d'erreurs.
+  - Supprimer la propriété `expand`
+  - Remplacer la valeur `"maison"` de la propriété `"collectionName"` par : `Collections.Maison`
+    - Vérifier que l'import de `Collections` a bien été ajouté
 
 ## Le composant `MaisonCard.vue`
 
