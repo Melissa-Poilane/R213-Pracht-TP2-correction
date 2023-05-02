@@ -96,15 +96,24 @@ Afficher toutes les maisons avec un `v-for`comme [vu en CM/TD][CM-boucle-objet]
 
 ## Afficher les images
 
-Vous pouvez adapter le code suivant ([PocketBase file url][pb-file-url]) :
+Vous pouvez tester le code suivant ([PocketBase file url][pb-file-url]) :
 
-```js
-import { pb } from '@/backend'
-/*...*/
-const urlImg = props.img
-  ? pb.getFileUrl(props, props.img, { thumb: '100x250' })
-  : '/image-not-found.png'
-```
+- Remomer `backend.mjs` en `backend.ts` et exporter `pb`
+- Le fichier `/src/components/MaisonCard.vue`
+
+  ```html
+  <script setup lang="ts">
+    import { pb } from '@/backend'
+    import type { MaisonRecord, MaisonResponse, BaseSystemFields } from '@/pocketbase-types'
+
+    // bug MaisonResponse
+    const props = defineProps<MaisonRecord & BaseSystemFields<null>>()
+
+    const img0 = props.images?.[0]
+    const urlImg0 = img0 ? pb.getFileUrl(props, img0, { thumb: '100x250' }) : '/image-not-found.png'
+    console.log(urlImg0)
+  </script>
+  ```
 
 Il faut que :
 
