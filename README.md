@@ -68,6 +68,16 @@ Pour le code du template, vous pouvez utiliser un des plugins Figma suivants :
 
 Pour les `props` du composant `MaisonCard`, bien utiliser le type générer automatiquement de PocketBase : `MaisonRecord` à importer de `/src/pocketbase-types.ts`.
 
+Rq. pour colorier le coeur si "favoris" : entourer le `<path>` du code suivant :
+
+```html
+<g :class="{ 'fill-red-400': favori }">
+  <path ... />
+</g>
+```
+
+On utilise la syntaxe de ["binding" des classes CSS par un objet][bindClass].
+
 ### Tester le composant
 
 Dans le `<template>` de `App.vue`, ajouter :
@@ -127,3 +137,4 @@ const maisonsDePlusde100M2 = maisonsListe.filter(
 [filter]: https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Global_Objects/Array/filter
 [map]: https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Global_Objects/Array/map
 [pb-file-url]: https://pocketbase.io/docs/files-handling/#file-url
+[bindClass]: https://vuejs.org/guide/essentials/class-and-style.html#binding-to-objects
