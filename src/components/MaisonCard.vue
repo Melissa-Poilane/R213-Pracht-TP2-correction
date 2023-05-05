@@ -5,6 +5,23 @@ import type { MaisonRecord, MaisonResponse, BaseSystemFields } from '@/pocketbas
 // bug MaisonResponse
 const props = defineProps<MaisonRecord & BaseSystemFields<null>>()
 
+/* Si bug, utilisez : */
+// const props = defineProps<{
+//   nomMaison?: string
+//   prix?: number
+//   images?: string[]
+//   nbChambres?: number
+//   nbSdb?: number
+//   adresse?: string
+//   surface?: number
+//   favori?: boolean
+//   id: string
+//   created: string
+//   updated: string
+//   collectionId: string
+//   collectionName: string
+// }>()
+
 const img0 = props.images?.[0]
 const urlImg0 = img0 ? pb.getFileUrl(props, img0, { thumb: '100x250' }) : '/image-not-found.png'
 console.log(urlImg0)
