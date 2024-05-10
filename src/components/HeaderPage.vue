@@ -35,7 +35,7 @@ function closeMenu() {
       </button>
 
       <nav
-        class="invisible fixed inset-0 bg-indigo text-2xl text-white opacity-0 transition-all duration-300 ease-in-out lg:visible lg:relative lg:flex lg:items-center lg:bg-transparent lg:text-sm lg:font-bold lg:uppercase lg:tracking-wide lg:text-black lg:opacity-100"
+        class="invisible fixed inset-0 bg-indigo-700 text-2xl text-white opacity-0 transition-all duration-300 ease-in-out lg:visible lg:relative lg:flex lg:items-center lg:bg-transparent lg:text-sm lg:font-bold lg:uppercase lg:tracking-wide lg:text-black lg:opacity-100"
         :class="{ '!visible opacity-100': activeMenu }"
         v-scroll-lock="activeMenu"
       >
