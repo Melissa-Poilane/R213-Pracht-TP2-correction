@@ -27,10 +27,11 @@ coverage
 *.sln
 *.sw?
 
+*.tsbuildinfo
+
+# généré par "unplugin-vue-router"
+typed-router.d.ts
+
 # PocketBase
-/pocketbase/pb_data
-/pocketbase/pb_data.zip
-/pocketbase/pocketbase
-/pocketbase/pocketbase.exe
-/pocketbase/CHANGELOG.md
-/pocketbase/LICENSE.md
+/pocketbase/*
+!/pocketbase/pb_migrations

@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { pb } from '@/backend'
-import type RecordModel from 'pocketbase';
+import { type RecordModel } from 'pocketbase'
 const props = defineProps<{
   /** L'enregistrement 'complet' (id, collectionId) de PocketBase */
   record: RecordModel
@@ -15,11 +15,7 @@ const props = defineProps<{
    */
   thumb?: string
 }>()
-const src = pb.getFileUrl({
-  id: (props.record as unknown as { id: string }).id,
-  collectionId: props.record.collection.toString(),
-  collectionName: props.record.collection.toString()
-}, props.filename, {
+const src = pb.getFileUrl(props.record, props.filename, {
   thumb: props.thumb || `${props.width ?? 0}x${props.height ?? 0}`
 })
 </script>
