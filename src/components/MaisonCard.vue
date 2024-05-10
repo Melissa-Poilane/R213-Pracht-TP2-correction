@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { pb } from '@/backend'
-import type { MaisonRecord, MaisonResponse, BaseSystemFields } from '@/pocketbase-types'
+import type { MaisonRecord, BaseSystemFields } from '@/pocketbase-types'
 
 // bug MaisonResponse
 const props = defineProps<MaisonRecord & BaseSystemFields<null>>()
@@ -22,8 +22,14 @@ const props = defineProps<MaisonRecord & BaseSystemFields<null>>()
 //   collectionName: string
 // }>()
 
-const img0 = props.images?.[0]
-const urlImg0 = img0 ? pb.getFileUrl(props, img0, { thumb: '100x250' }) : '/image-not-found.png'
+import { onMounted, ref } from 'vue'
+
+let img0 = ref(null)
+
+onMounted(() => {
+  img0.value = (props.images?.[0] ?? '') as 'string' | null;
+})
+const urlImg0 = img0.value ? pb.getFileUrl(props, img0.value as string, { thumb: '100x250' }) : '/image-not-found.png'
 console.log(urlImg0)
 </script>
 
