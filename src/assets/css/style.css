@@ -4,33 +4,47 @@
 
 @layer base {
   body {
-    @apply font-sans text-base leading-normal;
+    @apply font-sans text-base leading-normal text-gray-500;
   }
   h1 {
-    @apply text-4xl font-serif leading-tight lg:text-6xl;
+    @apply leading-tight text-2xl lg:text-4xl;
   }
   h2 {
-    @apply text-2xl font-serif leading-tight lg:text-4xl;
+    @apply text-2xl leading-8 ;
   }
   h3 {
-    @apply text-xl font-serif leading-tight;
+    @apply text-lg leading-tight;
   }
-  ::-moz-selection {
-    @apply bg-red-300;
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply font-bold text-gray-900;
   }
-  ::selection {
-    @apply bg-red-300;
+  main a {
+    @apply text-indigo-500;
+  }
+  .small {
+    @apply text-sm font-bold text-gray-400;
   }
 }
 
 @layer components {
-  .grille {
-    @apply lg:grid lg:grid-cols-principal lg:justify-center lg:gap-12 px-6;
+  .container {
+    @apply max-w-screen-xl mx-auto px-6;
   }
   .menu-item {
-    @apply relative overflow-hidden lg:before:absolute lg:before:bottom-0 lg:before:left-0 lg:before:h-2 lg:before:w-full lg:before:translate-y-2 lg:before:bg-indigo-500 lg:before:rounded-3xl lg:before:transition-all lg:before:duration-300 lg:before:ease-in-out lg:hover:before:translate-y-0;
+    @apply relative overflow-hidden ;
   }
   .menu-link {
-    @apply block px-5 py-4 lg:py-8;
+    @apply block px-4 py-3  rounded-lg mb-4;
+  }
+  header nav .router-link-active {
+   @apply font-bold text-indigo-500 bg-indigo-100 lg:bg-transparent;
+  }
+  .grille {
+    @apply lg:grid lg:grid-cols-principal flex flex-col gap-8 md:grid md:grid-cols-2 max-w-screen-xl mx-auto;
   }
 }
