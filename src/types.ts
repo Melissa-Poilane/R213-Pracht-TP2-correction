@@ -11,5 +11,5 @@ export interface MaisonRecord {
     nomMaison: string;
     prix: number;
     surface: number;
-    updated: string;   
-}
+    updated: string;
+  }
