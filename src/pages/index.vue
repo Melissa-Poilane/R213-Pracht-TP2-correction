@@ -2,7 +2,7 @@
 import card from '@/components/Maisoncard.vue'
 import IconSearch from '@/components/icons/IconSearch.vue'
 
-import type { MaisonRecord } from '@/types';
+import type { MaisonRecord } from '@/pocketbase-types';
 
 const maisonsListe: MaisonRecord[] = [
   {

@@ -5,7 +5,7 @@ import IconBath from '@/components/icons/IconBath.vue'
 import IconArea from '@/components/icons/IconArea.vue'
 import { defineProps } from 'vue' // Add this import statement
 
-import type { MaisonRecord } from '@/types'
+import type { MaisonRecord } from '@/pocketbase-types';
 defineProps<MaisonRecord>() 
 
 </script>
