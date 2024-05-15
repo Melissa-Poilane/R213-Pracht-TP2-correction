@@ -1,12 +1,12 @@
 
 <script setup>
-import HelloWorld from './components/HelloWorld.vue'
+import HelloWorld from '@/components/HelloWorld.vue'
 import Pocketbase from "pocketbase";
 </script>
 
 <template>
-  <header>
-    <img alt="Vue logo" class="logo" src="./assets/logo.svg" width="300" height="125" />
+  <header class="bg-violet-300">
+    <img alt="Vue logo" class="logo" src="/public/favicon.ico" width="300" height="125" />
 
     <div class="wrapper">
       <HelloWorld msg="Connexion !" />
@@ -39,7 +39,6 @@ alert("pocketbase_ip : "+pocketbase_ip);
 const pb = new Pocketbase(pocketbase_ip);
 
 export default {
-  name: 'App',
   components: {
     HelloWorld
   },

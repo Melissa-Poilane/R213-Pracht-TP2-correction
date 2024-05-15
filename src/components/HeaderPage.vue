@@ -61,10 +61,10 @@ function closeMenu() {
 
         <ul class="flex mx-6 my-6 gap-4 font-bold lg:flex lg:m-0">
     <li class="flex-grow menu-item text-indigo-500" > 
-      <RouterLink class="menu-link  px-6 border-2 flex justify-center border-indigo-200" to="/login" @click="closeMenu">Login</RouterLink>
+      <RouterLink class="menu-link  px-6 border-2 flex justify-center border-indigo-200" to="/connexion" @click="closeMenu">Login</RouterLink>
     </li>
     <li class="flex-grow menu-item text-white">
-      <RouterLink class="menu-link px-6 border-2 border-indigo-500 bg-indigo-500 flex justify-center" to="/sign up" @click="closeMenu">Sign&nbsp;up</RouterLink>
+      <RouterLink class="menu-link px-6 border-2 border-indigo-500 bg-indigo-500 flex justify-center" to="/connexion" @click="closeMenu">Sign&nbsp;up</RouterLink>
     </li>
   </ul>
       </nav>
