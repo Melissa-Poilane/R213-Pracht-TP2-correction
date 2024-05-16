@@ -5,15 +5,16 @@ import IconBath from '@/components/icons/IconBath.vue'
 import IconArea from '@/components/icons/IconArea.vue'
 import { defineProps } from 'vue' // Add this import statement
 
-import type { MaisonRecord } from '@/pocketbase-types';
-defineProps<MaisonRecord>() 
+import type { MaisonRecord } from '@/pocketbase-types'
+import ImgPb from './ImgPb.vue'
+const props = defineProps<MaisonRecord>() 
 
 </script>
 
 <template>
 
 <div class="flex flex-col rounded-lg border-2 border-indigo-100 mx-4 bg-white">
-<img :src="image" alt="Image de la maison" class="h-52 bg-slate-200 ">
+<ImgPb :record="props" :filename="image"  alt="Image de la maison" class="h-52 bg-slate-200 " />
 
 <div class="flex  flex-col gap-4 px-5 py-8">
     <div class="flex justify-between">

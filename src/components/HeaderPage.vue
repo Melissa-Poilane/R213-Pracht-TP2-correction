@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import LogoIcon from '@/components/icons/IconLogo.vue'
-import { RouterLink } from 'vue-router'
+import { RouterLink } from 'vue-router/auto'
 import { ref } from 'vue'
 
 const activeMenu = ref(false)
@@ -27,8 +27,7 @@ function closeMenu() {
       </button>
     </div>
 
-
-      
+<!-- menu -->
 
       <nav
         class="grow flex flex-col h-full mt-6 bg-indigo-50 fixed inset-0 invisible opacity-0 transition-all duration-300 ease-in-out lg:visible lg:relative justify-between lg:items-center lg:bg-transparent lg:text-sm lg:text-black lg:font-bold lg:uppercase lg:opacity-100 lg:flex-row"
@@ -47,7 +46,7 @@ function closeMenu() {
             >
           </li>
           <li class="menu-item">
-            <RouterLink class="menu-link" to="/sell" @click="closeMenu">Sell</RouterLink>
+            <RouterLink class="menu-link" to="/offres" @click="closeMenu">Toutes les offres</RouterLink>
           </li>
           <li class="menu-item">
             <RouterLink class="menu-link" to="/manage" @click="closeMenu">Manage&nbsp;Proprety</RouterLink>
