@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { onErrorCaptured } from 'vue'
 import HeaderPage from './components/HeaderPage.vue';
-import { RouterLink, RouterView } from 'vue-router/auto'
+import { RouterView } from 'vue-router/auto'
 
 onErrorCaptured((err, instance, info) => {
   console.error('erreur : ', err, '\ninfo : ', info, '\ncomposant : ', instance)
