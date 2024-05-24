@@ -14,7 +14,7 @@ const props = defineProps<MaisonRecord>()
 <template>
 
 <div class="flex flex-col rounded-lg border-2 border-indigo-100 mx-4 bg-white">
-<ImgPb :record="props" :filename="image"  alt="Image de la maison" class="h-52 bg-slate-200 " />
+<ImgPb :record="props" :filename="imgPath"  class="h-52 bg-slate-200 " />
 
 <div class="flex  flex-col gap-4 px-5 py-8">
     <div class="flex justify-between">

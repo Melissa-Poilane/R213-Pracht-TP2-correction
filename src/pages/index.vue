@@ -3,6 +3,7 @@ import { pb } from '@/backend';
 import card from '@/components/MaisonCard.vue'
 import IconSearch from '@/components/icons/IconSearch.vue'
 
+
 const maisonsListe =  await pb.collection('maison').getFullList({ filter: 'favori = true',
     }) ;
 
